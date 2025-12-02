@@ -36,4 +36,28 @@ app.use("/api/v1/comments", commentRouter);
 app.use("/api/v1/playlists", playlistRouter);
 app.use("/api/v1/dashboard", dashboardRouter);
 
+// error handling middleware
+import { ApiError } from "./utils/ApiError.js";
+
+app.use((err, req, res, next) => {
+  if (err instanceof ApiError) {
+    return res.status(err.statusCode).json({
+      statusCode: err.statusCode,
+      data: err.data,
+      success: err.success,
+      message: err.message,
+      errors: err.errors,
+    });
+  }
+
+  // Handle other errors
+  return res.status(500).json({
+    statusCode: 500,
+    data: null,
+    success: false,
+    message: err.message || "Internal Server Error",
+    errors: [],
+  });
+});
+
 export { app };
