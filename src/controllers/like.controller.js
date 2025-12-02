@@ -14,7 +14,7 @@ const toggleVideoLike = asyncHandler(async (req, res) => {
 
   const existingLike = await Like.findOne({
     likedBy: userId,
-    video: new mongoose.Types.ObjectId(videoId), // Convert videoId string to ObjectId for proper comparison
+    video: videoId,
   });
 
   if (existingLike) {
@@ -46,7 +46,7 @@ const toggleCommentLike = asyncHandler(async (req, res) => {
 
   const existingLike = await Like.findOne({
     likedBy: userId,
-    comment: new mongoose.Types.ObjectId(commentId), // Convert commentId string to ObjectId for proper comparison
+    comment: commentId,
   });
 
   if (existingLike) {
@@ -78,7 +78,7 @@ const toggleTweetLike = asyncHandler(async (req, res) => {
 
   const existingLike = await Like.findOne({
     likedBy: userId,
-    tweet: new mongoose.Types.ObjectId(tweetId), // Convert tweetId string to ObjectId for proper comparison
+    tweet: tweetId,
   });
 
   if (existingLike) {
