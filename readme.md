@@ -363,6 +363,12 @@ This project is licensed under the ISC License.
 
 ## 🙏 Acknowledgments
 
+Special thanks to **[Hitesh Choudhary](https://www.youtube.com/@chaiaurcode)** and the **Chai aur Code** YouTube channel for the excellent tutorial series that served as the foundation for learning and building this project.
+
+📺 **Tutorial Playlist**: [Backend Development with JavaScript](https://www.youtube.com/watch?v=EH3vGeqeIAo&list=PLu71SKxNbfoBGh_8p_NS-ZAh6v7HhYqHW)
+
+Additional acknowledgments:
+
 - Express.js community
 - MongoDB documentation
 - Cloudinary documentation
